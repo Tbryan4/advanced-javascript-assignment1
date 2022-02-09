@@ -7,7 +7,7 @@ function renderShoe({key,urlPath,price,shoe,type}) {
         <h2 class="shoe-name">${shoe}</h2>
         <p class="shoe-price">$${price}</p>
         <p class="shoe-type">${type}</p>
-        <img src="assets/images/5-stars.png" width="70" alt="5 stars">
+        <img src="../assets/images/5-stars.png" width="70" alt="5 stars">
         <div class="button-section">
           <button id="edit" data-key="${key}" >Edit</button>
           <button id="delete" data-key="${key}">Delete</button>
