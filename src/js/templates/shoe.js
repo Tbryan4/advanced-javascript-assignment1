@@ -9,7 +9,7 @@ function renderShoe({key,urlPath,price,shoe,type}) {
         <p class="shoe-type">${type}</p>
         <img src="../assets/images/5-stars.png" width="70" alt="5 stars">
         <div class="button-section">
-          <button id="edit" data-key="${key}" >Edit</button>
+          <button id="edit" data-key="${key}" data-img="${urlPath}" >Edit</button>
           <button id="delete" data-key="${key}">Delete</button>
         </div>
       </figcaption>
@@ -30,8 +30,10 @@ function addShoeControls (shoe) {
  }
 
  function onEditShoe(e) {
+  const urlPath = e.target.dataset.img
   const key = e.target.dataset.key
   sessionStorage.setItem('key',key)
+  sessionStorage.setItem('img',urlPath)
   window.location.assign('update.html')
   
 }

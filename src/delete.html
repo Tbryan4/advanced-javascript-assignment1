@@ -10,7 +10,7 @@
       name="description"
       content="Tylen Bryan - Assestment 1 - Firebase"
     />
-    <title>ShoeLocker - Edit Shoe</title>
+    <title>ShoeLocker - Delete Shoe</title>
     <link
     rel="apple-touch-icon"
     sizes="180x180"
@@ -75,31 +75,31 @@
         <div class="property-image form-control">
           <div id="uploadImage" class="display">
             <img src="assets/images/jordan-one-red.jpeg" alt="jimhortons vacaction upload images of your vacaction rental">
-          </div>   
-            <label for="rentalImage">Select image </label>
-            <input type="file" id="rentalImage" style="display:none"  class="select-file"   accept=".jpg, .png, .jpeg, .webp">
+          </div>  
          
           </div>
 
         <div class="rental-name form-control">
           <label for="shoeName">Shoe Name</label>         
-           <input id="shoeName" type="text" placeholder="Nike" >
+           <input id="shoeName" type="text" placeholder="Nike" disabled >
         </div>
 
         <div class="rental-name form-control">
           <label for="shoePrice">Shoe Price</label>         
-           <input id="shoePrice" type="text" placeholder="300" >
+           <input id="shoePrice" type="text" placeholder="300" disabled >
         </div>
 
         <div class="rental-name form-control">
           <label for="shoeType">Shoe Type</label>         
-           <input id="shoeType" type="text" placeholder="Basketball Shoes" >
+           <input id="shoeType" type="text" placeholder="Basketball Shoes" disabled >
         </div>
         
         <div class="submit-button form-control">
-        <button class="submit-button" type="submit">Add Property</button>
+        <button class="submit-button" type="submit">Delete Property</button>
 
         </div>
+
+        <p style="color: green;" class="user-msg"></p>
       </form>
     </main>
   </body>

@@ -3,11 +3,16 @@ import {ref as databaseRef, set, get} from 'firebase/database'
 import {db, storage} from './libs/firebase/firebaseConfig'
 const shoeform = document.forms['rentalForm']
 
-
+var hamburger = document.querySelector(".hamburger")
+console.log(hamburger)
+hamburger.addEventListener("click",function(){
+document.querySelector("body").classList.toggle("active")
+})
 
 
 async function pageInit() {
     const key = sessionStorage.getItem('key')
+    const img = sessionStorage.getItem('img')
     const shoeRef = databaseRef(db, `shoes/${key}`)
     const shoeSnapShot = await get(shoeRef)
    
@@ -43,7 +48,6 @@ async function updateShoeData () {
         shoe,
         price,
         type
-
      })
 
 
@@ -55,6 +59,8 @@ function setFieldValues({urlPath,price,shoe,type}) {
     shoeform.elements['shoeName'].value = shoe
     shoeform.elements['shoeType'].value = type
 }
+
+
 
 pageInit()
 
