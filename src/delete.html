@@ -10,7 +10,7 @@
       name="description"
       content="Tylen Bryan - Assestment 1 - Firebase"
     />
-    <title>ShoeLocker - Delete Shoe</title>
+    <title>ShoeLocker - Edit Shoe</title>
     <link
     rel="apple-touch-icon"
     sizes="180x180"
@@ -57,25 +57,52 @@
 
       <ul>
         <li><a href="write.html"><i class="bi bi-plus-circle-fill"></i>Add Shoe</a></li>
-        <li><a href="#"><i class="bi bi-gear-fill"></i>Update Shoe</a></li>
-          <li><a href="#"><i class="bi bi-trash-fill"></i>Delete Shoe</a></li>
+        <li><a href="update.html"><i class="bi bi-gear-fill"></i>Update Shoe</a></li>
+        <li><a href="delete.html"><i class="bi bi-trash-fill"></i>Delete Shoe</a></li>
       </ul>
     </nav>
   </header>
 
 
   <body>
-    
-
-
- </nav>
   
  
  
     <main>
       
-  
+      <form id="rentalForm" class="add-new-property">
+       
+        <div class="property-image form-control">
+          <div id="uploadImage" class="display">
+            <img src="assets/images/jordan-one-red.jpeg" alt="jimhortons vacaction upload images of your vacaction rental">
+          </div>   
+            <label for="rentalImage">Select image </label>
+            <input type="file" id="rentalImage" style="display:none"  class="select-file"   accept=".jpg, .png, .jpeg, .webp">
+         
+          </div>
+
+        <div class="rental-name form-control">
+          <label for="shoeName">Shoe Name</label>         
+           <input id="shoeName" type="text" placeholder="Nike" >
+        </div>
+
+        <div class="rental-name form-control">
+          <label for="shoePrice">Shoe Price</label>         
+           <input id="shoePrice" type="text" placeholder="300" >
+        </div>
+
+        <div class="rental-name form-control">
+          <label for="shoeType">Shoe Type</label>         
+           <input id="shoeType" type="text" placeholder="Basketball Shoes" >
+        </div>
+        
+        <div class="submit-button form-control">
+        <button class="submit-button" type="submit">Add Property</button>
+
+        </div>
+      </form>
     </main>
   </body>
 </html>
+ 
  
