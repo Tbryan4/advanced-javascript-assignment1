@@ -5,11 +5,19 @@ import { db, storage  } from "./libs/firebase/firebaseConfig";
 document.querySelector("#rentalImage").addEventListener("change", onImageSelected);
 document.forms["rentalForm"].addEventListener("submit", onAddShoe);
 const textElement = document.querySelector(".success-message")
+var ratingValue
 
 var hamburger = document.querySelector(".hamburger")
  hamburger.addEventListener("click",function(){
    document.querySelector("body").classList.toggle("active")
  })
+
+ const stars = document.querySelectorAll(".stars a");
+ stars.forEach((star,index) => {
+    star.addEventListener('click', () => {
+      ratingValue = index + 1
+    })
+ });
 
 
 
@@ -58,11 +66,8 @@ var hamburger = document.querySelector(".hamburger")
            storagePath,
            shoe,
            price,
-           type
-
-        })
-
-        
-        
+           type,
+           ratingValue
+        })        
     }
  

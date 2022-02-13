@@ -762,24 +762,24 @@ main {
   padding: 13px 30px;
   border-bottom: 1px solid rgb(255, 158, 158);
   color: rgb(241, 237, 237);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-size: 1.3rem;
   text-align: left;
   text-decoration: none;
 }
- i {
+i {
   padding-right: 1rem;
 }
 
-.wrapper .sidebar ul li a:hover{
+.wrapper .sidebar ul li a:hover {
   font-size: 1.4rem;
   transition: 0.5s;
 }
 
-.wrapper .sidebar h2  {
+.wrapper .sidebar h2 {
   font-size: 2rem;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   margin-bottom: 1rem;
 }
 
@@ -802,8 +802,8 @@ main {
 }
 
 body.active .wrapper .sidebar {
-  left: -270px
-} 
+  left: -270px;
+}
 
 body.active .wrapper .section {
   margin-left: 0;
@@ -814,21 +814,20 @@ body.active .shoes {
   transition: 0.5s;
 }
 
-
-
 body {
-  background-color: rgb(211, 211, 211); 
+  background-color: rgb(211, 211, 211);
 
   background-size: cover;
 }
-.shoe{
+.shoe {
   width: max-content;
   text-align: center;
   margin-top: 2rem;
   margin-left: 2rem;
 }
 
-.shoe, h2 {
+.shoe,
+h2 {
   font-size: 1.125rem;
   font-weight: 600;
   color: rgb(107, 106, 106);
@@ -849,15 +848,13 @@ figcaption {
 
 .shoe:hover {
   box-shadow: 0 0 50px rgb(154, 153, 153);
-  transition: ease-in-out .5s;
+  transition: ease-in-out 0.5s;
 }
 
 .button-section button:hover {
   box-shadow: 0 0 50px rgb(154, 153, 153);
   cursor: pointer;
 }
-
-
 
 figcaption > img {
   padding-bottom: 0.5rem;
@@ -868,7 +865,6 @@ figcaption > img {
   flex-wrap: wrap;
   margin-left: 16rem;
   transition: 0.5s;
-
 }
 
 .top-navbar {
@@ -884,18 +880,32 @@ figcaption > img {
 
 .button-section {
   display: flex;
-  justify-content:space-around;
-
+  justify-content: space-around;
 }
 
-.shoe, i {
+.shoe,
+i {
   cursor: pointer;
 }
 
 .shoe-msg {
   color: green;
 }
+.stars {
+  display: flex;
+ 
+}
+.stars a {
+  padding: 0.2rem;
+ opacity: 50%;
+ cursor: pointer;
+ text-decoration: none;
+}
 
+.stars:hover a {
+  opacity: 100%;
+}
 
-
-
+.stars a:hover ~ a {
+  opacity: 50%;
+}

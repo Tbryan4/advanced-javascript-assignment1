@@ -1,4 +1,26 @@
-function renderShoe({key,urlPath,price,shoe,type}) {
+function renderShoe({key,urlPath,price,shoe,type,ratingValue}) {
+
+  var outputSection 
+  if (ratingValue == 1) 
+  {
+    outputSection = "⭐"
+  }
+
+  else if(ratingValue == 2) {
+    outputSection = "⭐⭐"
+  }
+
+  else if(ratingValue == 3) {
+    outputSection = "⭐⭐⭐"
+  }
+
+  else if(ratingValue == 4) {
+    outputSection = "⭐⭐⭐⭐"
+  }
+  else if(ratingValue == 5) {
+    outputSection = "⭐⭐⭐⭐⭐"
+  }
+
     const template =  `
     <li class="shoe">
     <figure>
@@ -7,7 +29,9 @@ function renderShoe({key,urlPath,price,shoe,type}) {
         <h2 class="shoe-name">${shoe}</h2>
         <p class="shoe-price">$${price}</p>
         <p class="shoe-type">${type}</p>
-        <img src="../assets/images/5-stars.png" width="70" alt="5 stars">
+        <div id="${ratingValue}" class="stars-output">
+        ${outputSection}
+        </div>
         <div class="button-section">
           <button id="edit" data-key="${key}" data-img="${urlPath}" >Edit</button>
           <button id="delete" data-key="${key}">Delete</button>
@@ -16,7 +40,7 @@ function renderShoe({key,urlPath,price,shoe,type}) {
     </figure>
   </li>
     `
-
+    
 
     const element = document.createRange().createContextualFragment(template).children[0]
     addShoeControls(element)

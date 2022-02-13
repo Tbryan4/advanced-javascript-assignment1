@@ -7,7 +7,7 @@
     "clean": "rm -rf node_modules .git .parcel-cache dist .DS_Store",
     "static":"cp -rf ./src/static   dist",
     "start": "npx parcel src/index.html",
-    "tylen":"npx parcel build src/index.html",
+    "tylen":"npx parcel build src/index.html src/write.html src/update.html",
     "build": "npm run static && npm run tylen"
   },
   "keywords": [],
