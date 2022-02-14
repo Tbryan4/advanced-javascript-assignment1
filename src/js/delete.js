@@ -37,8 +37,7 @@ function deleteProductData() {
             key
         })
         
-        document.querySelector('#uploadImage img').src = 'goodbye-image.jpeg'
-        document.querySelector('.user-msg').innerHTML = "SHOE DELETED"
+        location.assign("index.html")
 
         
     } 

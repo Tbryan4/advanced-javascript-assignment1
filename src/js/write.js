@@ -16,6 +16,15 @@ var hamburger = document.querySelector(".hamburger")
  stars.forEach((star,index) => {
     star.addEventListener('click', () => {
       ratingValue = index + 1
+      stars.forEach((clickedStar,clickedIndex) =>{
+        if(clickedIndex <= index)
+        {
+          clickedStar.classList.add("active")
+        }
+        else {
+          clickedStar.classList.remove("active")
+        }
+      })
     })
  });
 
@@ -24,7 +33,8 @@ var hamburger = document.querySelector(".hamburger")
 
     function onAddShoe(e) {
         e.preventDefault();
-        uploadNewVacactionRenal();
+        uploadShoe();
+        window.alert("Shoe Added");
     }
   
 
@@ -38,7 +48,7 @@ var hamburger = document.querySelector(".hamburger")
      
     }
 
-    async function uploadNewVacactionRenal() {
+    async function uploadShoe() {
         // form data
         const shoe = document.querySelector('#shoeName').value.trim();
         const price = document.querySelector('#shoePrice').value.trim();

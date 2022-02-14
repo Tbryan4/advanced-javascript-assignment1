@@ -893,13 +893,19 @@ i {
 }
 .stars {
   display: flex;
- 
+}
+.logo a {
+  text-decoration: none;
+}
+.logo a:hover {
+  text-shadow: 0 0 10px black;
+  transition: 0.5s;
 }
 .stars a {
   padding: 0.2rem;
- opacity: 50%;
- cursor: pointer;
- text-decoration: none;
+  opacity: 50%;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .stars:hover a {
@@ -909,3 +915,9 @@ i {
 .stars a:hover ~ a {
   opacity: 50%;
 }
+
+.stars a.active {
+  opacity: 100%;
+}
+
+

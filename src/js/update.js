@@ -2,6 +2,7 @@ import {ref as storageRef, uploadBytes, getDownloadURL} from "firebase/storage";
 import {ref as databaseRef, set, get} from 'firebase/database'
 import {db, storage} from './libs/firebase/firebaseConfig'
 const shoeform = document.forms['rentalForm']
+var ratingValue
 
 var hamburger = document.querySelector(".hamburger")
 console.log(hamburger)
@@ -28,6 +29,23 @@ function onUpdateShoe(shoe) {
     updateShoeData()
 }
 
+const stars = document.querySelectorAll(".stars a");
+stars.forEach((star,index) => {
+   star.addEventListener('click', () => {
+     ratingValue = index + 1
+     console.log(ratingValue)
+     stars.forEach((clickedStar,clickedIndex) =>{
+       if(clickedIndex <= index)
+       {
+         clickedStar.classList.add("active")
+       }
+       else {
+         clickedStar.classList.remove("active")
+       }
+     })
+   })
+});
+
 async function updateShoeData () {
     const file = document.querySelector('#rentalImage').files[0]
     const price = shoeform.elements['shoePrice'].value.trim()
@@ -47,10 +65,11 @@ async function updateShoeData () {
         storagePath,
         shoe,
         price,
-        type
+        type,
+        ratingValue
      })
 
-
+     location.assign("index.html")
 }
 
 function setFieldValues({urlPath,price,shoe,type}) {
@@ -58,6 +77,9 @@ function setFieldValues({urlPath,price,shoe,type}) {
     shoeform.elements['shoePrice'].value = price
     shoeform.elements['shoeName'].value = shoe
     shoeform.elements['shoeType'].value = type
+    shoeform.elements['stars'] = ratingValue
+
+    
 }
 
 
